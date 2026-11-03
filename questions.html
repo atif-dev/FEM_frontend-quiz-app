@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<link rel="stylesheet" type="text/css" href="style.css">
+  	<link rel="stylesheet" type="text/css" href="questions_style.css">
+  	<script defer src="script.js"></script>
+  	<script defer src="questions_script.js"></script>
+
+	<title>Questions</title>
+	
+</head>
+<body>
+	<header>
+	  <div><img class="quest-category-icon icon-a11y" src="./assets/images/icon-accessibility.svg" id="quiz_category_img"><p class="a11y-category light-texts2" id="title">Accessibility</p></div>
+	  <div class="theme-switch">
+	    <div>
+	      <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#626C7F" viewBox="0 0 24 24"><path d="M12 1.5a.75.75 0 0 1 .75.75v1.5a.75.75 0 1 1-1.5 0v-1.5A.75.75 0 0 1 12 1.5Zm0 15a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm0-1.5a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm9.75-2.25a.75.75 0 1 0 0-1.5h-1.5a.75.75 0 1 0 0 1.5h1.5ZM12 19.5a.75.75 0 0 1 .75.75v1.5a.75.75 0 1 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75Zm-8.25-6.75a.75.75 0 1 0 0-1.5h-1.5a.75.75 0 1 0 0 1.5h1.5Zm.969-8.031a.75.75 0 0 1 1.062 0l1.5 1.5a.751.751 0 0 1-1.062 1.062l-1.5-1.5a.75.75 0 0 1 0-1.062Zm1.062 14.562a.75.75 0 1 1-1.062-1.06l1.5-1.5a.75.75 0 1 1 1.062 1.06l-1.5 1.5Zm13.5-14.562a.75.75 0 0 0-1.062 0l-1.5 1.5a.751.751 0 0 0 1.062 1.062l1.5-1.5a.75.75 0 0 0 0-1.062Zm-1.062 14.562a.75.75 0 0 0 1.062-1.06l-1.5-1.5a.75.75 0 0 0-1.062 1.06l1.5 1.5Z"/></svg>
+	    </div>
+	    <div>
+	      <label class="switch">
+	      <input type="checkbox"/>
+	      <span></span>
+	      </label>
+	    </div>
+	    <div>
+	      <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#626C7F" viewBox="0 0 24 24"><path d="M11.775 4.522A7.5 7.5 0 1 1 4.898 16.09c2.104-.57 4.974-1.953 6.24-5.326.828-2.211.876-4.408.637-6.241ZM20.184 12a8.997 8.997 0 0 0-9.315-8.994.75.75 0 0 0-.713.888c.345 1.821.42 4.092-.424 6.342-1.2 3.201-4.203 4.26-6.115 4.606a.75.75 0 0 0-.542 1.066A9 9 0 0 0 20.184 12Z"/></svg>
+	    </div>
+	  </div>
+	</header>
+	<main>
+		<div>
+			<pre class="question-no light-texts1">Question <span id="question_no">_</span> of 10</pre>
+			<p class="question light-texts2" id="question">___________________</p>
+			<div id="progress_block" class="progress-block light-block">
+				<!-- <div class="progress"></div> -->
+				<!-- <input id="progress_bar" class="slider" type="range" name="" value="10" min="0" max="10"> -->
+				<div id="progress_bar" class="progress-bar"></div>
+			</div>
+		</div>
+		<div class="right-section">
+			<button class="option option-space light-block">
+				<p>
+					<span class="choice-index">A</span>
+					<span class="choice light-texts2" id="option0">__</span>
+				</p>
+			</button>
+			<button class="option option-space light-block">
+				<p>
+					<span class="choice-index">B</span>
+					<span class="choice light-texts2" id="option1">__</span>
+				</p>
+			</button>
+			<button class="option option-space light-block">
+				<p>
+					<span class="choice-index">C</span>
+					<span class="choice light-texts2" id="option2">__</span>
+				</p>
+			</button>
+			<button class="option option-space light-block">
+				<p>
+					<span class="choice-index">D</span>
+					<span class="choice light-texts2" id="option3">__</span>
+				</p>
+			</button>
+			
+			<button class="submit" id="submit_btn">Submit Answer</button>
+			<!-- error message -->
+			<div class="error">
+				<svg class="cross" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><path fill="#EE5454" d="M20 5a15 15 0 1 1 0 30 15 15 0 0 1 0-30Zm0 2.5a12.5 12.5 0 1 0 0 25 12.5 12.5 0 0 0 0-25Zm-5.402 7.415.142-.175a1.25 1.25 0 0 1 1.595-.143l.175.143L20 18.233l3.49-3.493a1.25 1.25 0 0 1 1.595-.143l.175.143a1.25 1.25 0 0 1 .142 1.595l-.142.175L21.767 20l3.493 3.49a1.25 1.25 0 0 1 .142 1.595l-.142.175a1.25 1.25 0 0 1-1.595.142l-.175-.142L20 21.767l-3.49 3.493a1.25 1.25 0 0 1-1.595.142l-.175-.142a1.25 1.25 0 0 1-.143-1.595l.143-.175L18.233 20l-3.493-3.49a1.25 1.25 0 0 1-.143-1.595Z"/></svg>
+				<p class="light-texts2">Please select an answer</p>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
