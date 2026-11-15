@@ -1,13 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
-const encodedData = urlParams.get('data');
+const quizData = urlParams.get('data');
 
 let quiz;
-if (encodedData) {
-    // Decode and parse the JSON string
-    quiz = JSON.parse(decodeURIComponent(encodedData));
+if(quizData){
+	quiz = JSON.parse(quizData);
 }
-
-
 
 let quizCategoryImg = document.querySelector("#quiz_category_img");
 let title = document.querySelector("#title");
@@ -98,8 +95,9 @@ submitBtn.addEventListener("click", function(){
 
 	if(submitBtn.innerHTML == "Next Question"){
 		optionSelected = false;
-		let questionLength = 10;
-		if(a == questionLength){
+		/*let questionLength = 10;*/
+		const questionLength = quiz.questions.length;
+		if(a === questionLength){
 			let quizCompleted = {
 				quiz_category_image: quiz.icon,
 				quiz_title: quiz.title,

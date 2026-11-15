@@ -1,10 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
-const encodedData = urlParams.get('data');
+const completedQuizData = urlParams.get('data');
 
 let completedQuiz;
-if (encodedData) {
+if (completedQuizData) {
     // Decode and parse the JSON string
-    completedQuiz = JSON.parse(decodeURIComponent(encodedData));
+    completedQuiz = JSON.parse(completedQuizData);
 }
 
 let quizCategoryImg = document.querySelector("#quiz_category_img");
@@ -33,8 +33,7 @@ let particles = {
   color: ["#FF06B5"]          // Palette the particles are picked from
 };
 
-
-if(OBTAINED_SCORE == totalScore){
+if(OBTAINED_SCORE === totalScore){
     confetti(particles);
 }
 

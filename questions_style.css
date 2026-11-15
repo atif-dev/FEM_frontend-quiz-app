@@ -50,10 +50,6 @@ main .right-section{
 	align-items: center;
 }
 
-.option-a, .option-b, .option-c, .option-d{
-	
-}
-
 .grey-background{
 	background: var(--grey-50);
 }
@@ -164,7 +160,6 @@ main .right-section{
 
 	
 }
-
 
 /*Correct answer*/
 .correct-ans{

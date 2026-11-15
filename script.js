@@ -42,7 +42,7 @@ function toggleDarkMode() {
 
 function showError(){
    let footer = document.querySelector("footer");
-   if(footer.children[0] != undefined){
+   if(footer.children[0] !== undefined){
       return;
    }
    let errorBlock = document.createElement("p");
@@ -55,20 +55,13 @@ let quizzes = "";
 let quizzesObject = "";
 async function getQuizzez(){
    try{
-      const REQUEST_URL = "/data.json"; /*=> local url. Need local server for working.*/
-      /*const REQUEST_URL = ""; GitHub link*/
-      const REQUEST = new Request(REQUEST_URL); 
-      let response = await fetch(REQUEST);
-      /*if(!response.ok) return alert("Something went wrong.");*/
-      if(!response.ok){
-        /* showError();*/
-         return;
-      }
+      /*let response = await fetch("./data.json");*/
+      let response = await fetch("https://raw.githubusercontent.com/atif-dev/FEM_frontend-quiz-app/refs/heads/main/data.json");
+      if(!response.ok) throw new Error(`HTTP error: ${response.status}`);
 
       quizzesObject = await response.json();
    }catch(e){
-      /*alert("Something went wrong while fetching the data.");*/
-      /*showError();*/
+      console.error("Failed to load quizzes:", e);
    }
 }
 
@@ -76,21 +69,24 @@ getQuizzez().then(() => {
    if(quizzesObject.length !== 0){
       quizzes = quizzesObject.quizzes;
    }else{
+      console.error("Failed to load quizzes");
       return;
    }
 });
 
 let questionCategoriesBlock = document.querySelector("#quest_categories");
-let questionCategories = (questionCategoriesBlock == null) ? "" : questionCategoriesBlock.children;
+let questionCategories = (questionCategoriesBlock === null) ? "" : questionCategoriesBlock.children;
 for (let questionCategory of questionCategories){
    questionCategory.addEventListener("click", function (){
-      if(quizzes.length == 0){
+      if(quizzes.length === 0){
          showError();
          return;
       }
       for(let quiz of quizzes){
-         if(this.id == quiz.title){
+         if(this.id === quiz.title){
+            console.log(quiz)
             const jsonString = encodeURIComponent(JSON.stringify(quiz));
+
             window.location.href = `questions.html?data=${jsonString}`;
          }
       }
