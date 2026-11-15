@@ -77,7 +77,7 @@ function selectOption(){
 }
 
 selectOption();
-let a = 1;
+let currentQuestionIndex = 1;
 let correctAnswerTick = 0;
 let submitBtn = document.querySelector("#submit_btn");
 let progressBlock = document.querySelector("#progress_block");
@@ -97,11 +97,11 @@ submitBtn.addEventListener("click", function(){
 		optionSelected = false;
 		/*let questionLength = 10;*/
 		const questionLength = quiz.questions.length;
-		if(a === questionLength){
+		if(currentQuestionIndex === questionLength){
 			let quizCompleted = {
 				quiz_category_image: quiz.icon,
 				quiz_title: quiz.title,
-				quiz_completed_state: a,
+				quiz_completed_state: currentQuestionIndex,
 				score:score 
 			}
 
@@ -109,15 +109,15 @@ submitBtn.addEventListener("click", function(){
 			window.location.href = `score.html?data=${quizCompletedJsonString}`;
 			return;
 		}
-		questionText = quiz.questions[a];
+		questionText = quiz.questions[currentQuestionIndex];
 		question.innerText = questionText.question;
 	    option0.innerText = questionText.options[0];
 	    option1.innerText = questionText.options[1];
 	    option2.innerText = questionText.options[2];
 	    option3.innerText = questionText.options[3];
 	    submitBtn.innerHTML = "Submit Answer";
-		a++;
-		questionNum.innerHTML = a;
+		currentQuestionIndex++;
+		questionNum.innerHTML = currentQuestionIndex;
 
 		//remove previous question states
 		selectedAnswerBlock.classList.remove("correct-ans");

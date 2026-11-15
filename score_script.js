@@ -2,10 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const completedQuizData = urlParams.get('data');
 
 let completedQuiz;
-if (completedQuizData) {
-    // Decode and parse the JSON string
-    completedQuiz = JSON.parse(completedQuizData);
-}
+completedQuiz = JSON.parse(completedQuizData);
 
 let quizCategoryImg = document.querySelector("#quiz_category_img");
 let title = document.querySelector("#title");
@@ -14,12 +11,21 @@ let quizCategoryImg1 = document.querySelector("#quiz_category_img1");
 let quizCategory = document.querySelector("#quiz_category");
 let obtainedScore = document.querySelector("#obtained_score");
 
-quizCategoryImg.src = completedQuiz.quiz_category_image;
-title.innerHTML = completedQuiz.quiz_title;
-quizCompleted.innerHTML = (completedQuiz.quiz_completed_state) == 10 ? "Quiz completed" : "";
-quizCategoryImg1.src = completedQuiz.quiz_category_image;
-quizCategory.innerHTML = completedQuiz.quiz_title;
-obtainedScore.innerHTML = completedQuiz.score;
+if (Object.keys(completedQuiz).length !== 0) {
+    quizCategoryImg.src = completedQuiz.quiz_category_image;
+    title.innerHTML = completedQuiz.quiz_title;
+    quizCompleted.innerHTML = (completedQuiz.quiz_completed_state) == 10 ? "Quiz completed" : "";
+    quizCategoryImg1.src = completedQuiz.quiz_category_image;
+    quizCategory.innerHTML = completedQuiz.quiz_title;
+    obtainedScore.innerHTML = completedQuiz.score;
+}else{
+    let footer = document.querySelector("footer");
+    
+    let errorBlock = document.createElement("p");
+    errorBlock.classList.add("data-error");
+    errorBlock.innerHTML = "Something went wrong.";
+    footer.appendChild(errorBlock);
+}
 
 const OBTAINED_SCORE = completedQuiz.score;
 const totalScore = 10;

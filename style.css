@@ -207,19 +207,6 @@ main{
   color: white;
 }
 
-.dark-mode-tablet{
-	background:  #313E51 url("./assets/images/pattern-background-tablet-dark.svg");
-  background-repeat: no-repeat;
-  color: white;
-}
-
-.dark-mode-mobile{
-	background:  #313E51 url("./assets/images/pattern-background-mobile-dark.svg");
-  background-repeat: no-repeat;
-	background-size: cover;
-  color: white;
-}
-
 .light{
 	fill: white;
 }
@@ -296,6 +283,10 @@ main{
 		background-repeat: no-repeat;
 	}
 
+	body.dark-mode {
+      background-image: url("./assets/images/pattern-background-tablet-dark.svg");
+   }
+
 	main{
 		gap: 3rem;
 	}
@@ -332,6 +323,10 @@ main{
 		background: url(./assets/images/pattern-background-mobile-light.svg);
 		background-repeat: no-repeat;
 	}
+
+	body.dark-mode {
+      background-image: url("./assets/images/pattern-background-mobile-dark.svg");
+  }
 
 	header{
 		margin-top: 1em;

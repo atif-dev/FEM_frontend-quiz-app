@@ -3,14 +3,7 @@ themeSwitch.addEventListener("click", toggleDarkMode);
 
 function toggleDarkMode() {
    const background = document.body;
-
-   if(window.innerWidth == 768){
-     background.classList.toggle("dark-mode-tablet");
-   }else if(window.innerWidth == 375){
-      background.classList.toggle("dark-mode-mobile");
-   }else{
-      background.classList.toggle("dark-mode");
-   }
+   background.classList.toggle("dark-mode");
    
    const themeIcons = document.querySelectorAll(".theme-icon");
    themeIcons.forEach((themeIcon,i) =>{
@@ -53,7 +46,7 @@ function showError(){
 
 let quizzes = "";
 let quizzesObject = "";
-async function getQuizzez(){
+async function getQuizzes(){
    try{
       /*let response = await fetch("./data.json");*/
       let response = await fetch("https://raw.githubusercontent.com/atif-dev/FEM_frontend-quiz-app/refs/heads/main/data.json");
@@ -65,11 +58,11 @@ async function getQuizzez(){
    }
 }
 
-getQuizzez().then(() => {
-   if(quizzesObject.length !== 0){
+getQuizzes().then(() => {
+   if(Array.isArray(quizzesObject.quizzes)){
       quizzes = quizzesObject.quizzes;
    }else{
-      console.error("Failed to load quizzes");
+      console.log("Quiz data is missing");
       return;
    }
 });

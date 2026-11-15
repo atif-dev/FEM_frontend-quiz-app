@@ -50,7 +50,7 @@ Users should be able to:
 
 ### My process
 
-  - Developed for 1440px, 768px and 375 widths.
+  - Developed for 1440px, 768px and 375px widths.
   - Developed in terms of code readability.
   - Added keyboard accessibility.
   - Coded JS as defensive programming.
