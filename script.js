@@ -84,9 +84,7 @@ for (let questionCategory of questionCategories){
       }
       for(let quiz of quizzes){
          if(this.id === quiz.title){
-            console.log(quiz)
             const jsonString = encodeURIComponent(JSON.stringify(quiz));
-
             window.location.href = `questions.html?data=${jsonString}`;
          }
       }

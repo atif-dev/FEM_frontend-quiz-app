@@ -69,7 +69,7 @@ main .right-section{
 
 	main{
 		flex-direction: column;
-		gap: 2.5rem;
+		gap: 1.5rem;
 	}
 
 	header{
@@ -83,11 +83,16 @@ main .right-section{
 	}
 
 	.progress-block{
-		margin-top: 40px;
+		margin-top: 24px;
 	}
 
 	.submit{
 		background: var(--purple-600);
+		margin-top: 1rem;
+	}
+
+	main .right-section{
+		gap:1.5rem;
 	}
 
 }
@@ -129,6 +134,7 @@ main .right-section{
 		padding: 16px;
 		border-radius: 12px;
 		font-size: 1.125rem;
+		margin-top: unset;
 	}
 
 	.error{
@@ -139,6 +145,19 @@ main .right-section{
 		width: 30px;
 		height: 30px;
 	}
+
+	main{
+		gap: 0.5rem;
+	}
+
+	main .right-section{
+		gap: 1rem;
+	}
+
+	.progress-block {
+    	margin-top: 0.5rem;
+	}
+
 }
 
 @media(hover: hover) and (pointer: fine) {
