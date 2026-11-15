@@ -40,13 +40,13 @@ Users should be able to:
 
 ### Screenshots
 
-![PC View]()
-![Mobile view]()
+![PC View](https://github.com/atif-dev/FEM_frontend-quiz-app/blob/main/screenshots/Screen%201440%20x%20900.png?raw=true)
+![Mobile view](https://github.com/atif-dev/FEM_frontend-quiz-app/blob/main/screenshots/iPhone%208(375px%20width).png?raw=true)
 
 ### Links
 
 - Frontend Mentor solution url:    
-- Live Site URL: 
+- Live Site URL: https://atif-dev.github.io/FEM_frontend-quiz-app/
 
 ### My process
 
