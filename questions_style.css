@@ -65,11 +65,16 @@ main .right-section{
     display: none;
 }
 
-@media (max-width: 768px){
+@media (max-width: 1200px){
 
 	main{
+		align-items: center;
 		flex-direction: column;
 		gap: 1.5rem;
+	}
+
+	.left-section{
+		align-self: flex-start;
 	}
 
 	header{
@@ -158,26 +163,26 @@ main .right-section{
     	margin-top: 0.5rem;
 	}
 
+	.option{
+		width: 345px;
+    	max-width: unset;
+	}
+
 }
 
-@media(hover: hover) and (pointer: fine) {
+.option:hover, .active{
+	border: 3px solid var(--purple-600);
+	cursor: pointer;
+}
 
-	.option:hover, .active{
-		border: 3px solid var(--purple-600);
-		cursor: pointer;
-	}
+.option:hover .choice-index, .active1{
+	background: var(--purple-600);
+	color: white;
+}
 
-	.option:hover .choice-index, .active1{
-		background: var(--purple-600);
-		color: white;
-	}
-
-	.submit:hover{
-		background: var(--purple-600);
-		cursor: pointer;
-	}
-
-	
+.submit:hover{
+	background: var(--purple-600);
+	cursor: pointer;
 }
 
 /*Correct answer*/

@@ -6,6 +6,12 @@ if(quizData){
 	quiz = JSON.parse(quizData);
 }
 
+/*homepage's theme state in questions' page*/
+/*if(quiz.isThemeON == true){
+	document.querySelector("#themeee").checked = quiz.isThemeON;
+	toggleDarkMode();
+}*/
+
 let quizCategoryImg = document.querySelector("#quiz_category_img");
 let title = document.querySelector("#title");
 let question = document.querySelector("#question");
